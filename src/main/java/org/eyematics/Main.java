@@ -53,7 +53,7 @@ public class Main {
                     .setConsentId(consentId)
                     .build();
             sharedPatient.getMeta().setSource("mailto:medic@" + d.toLowerCase() + ".org");
-            sharedPatientResources.getEntry().getFirst().setResource(sharedPatient);
+            sharedPatientResources.getEntry().get(0).setResource(sharedPatient);
             sharedPatientResources.getEntry().forEach(dicBundle::addEntry);
             bundleWriter.writeBundleToJSON(dicBundle, BASE_PATH, "testdatensatz_" + d.toLowerCase());
             System.out.println("DONE");

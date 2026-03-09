@@ -4,7 +4,7 @@ import org.hl7.fhir.r4.model.*;
 
 import java.util.*;
 
-public class BundleResource extends AbstractFHIRResourceBuilder<Bundle, BundleResource>{
+public class BundleResource extends AbstractFHIRResourceBuilder<Bundle, BundleResource> {
 
     private int patientId;
     private int maxPatientId;
@@ -102,7 +102,7 @@ public class BundleResource extends AbstractFHIRResourceBuilder<Bundle, BundleRe
 
         Consent validConsent = cr.setConsentState(Consent.ConsentState.ACTIVE)
                 .setDateIntervalls(start, end)
-                .setConcept(ConsentCodeSystem.MDAT_ZUSAMMENFUEHREN_DRITTE)
+                .setConcept(ConsentCodeSystem.MDAT_WISSENSCHAFTLICH_NUTZEN)
                 .setPatient(patient)
                 .setId(this.consentId++)
                 .build();
@@ -121,7 +121,7 @@ public class BundleResource extends AbstractFHIRResourceBuilder<Bundle, BundleRe
 
         Consent invalidConsent = cr.setConsentState(Consent.ConsentState.ACTIVE)
                 .setDateIntervalls(start, end)
-                .setConcept(ConsentCodeSystem.MDAT_ZUSAMMENFUEHREN_DRITTE)
+                .setConcept(ConsentCodeSystem.MDAT_WISSENSCHAFTLICH_NUTZEN)
                 .setPatient(patient)
                 .setId(this.consentId++)
                 .build();

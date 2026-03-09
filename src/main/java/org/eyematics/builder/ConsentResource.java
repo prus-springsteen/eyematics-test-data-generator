@@ -32,7 +32,7 @@ public class ConsentResource extends AbstractFHIRResourceBuilder<Consent, Consen
         this.setSource("clinic");
         this.consentState = Consent.ConsentState.ACTIVE;
         this.patientReference = new Reference(new IdType("Patient", UUID.randomUUID().toString()));
-        this.setConcept(ConsentCodeSystem.MDAT_ZUSAMMENFUEHREN_DRITTE);
+        this.setConcept(ConsentCodeSystem.MDAT_WISSENSCHAFTLICH_NUTZEN);
     }
 
     @Override

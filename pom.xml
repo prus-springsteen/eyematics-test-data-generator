@@ -6,7 +6,7 @@
 
     <groupId>org.eyematics</groupId>
     <artifactId>eyematics-test-data-generator</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.1</version>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>

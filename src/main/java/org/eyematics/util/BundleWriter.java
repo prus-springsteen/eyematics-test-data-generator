@@ -11,13 +11,9 @@ import java.nio.file.Path;
 
 public class BundleWriter {
 
-    private final FhirContext fhirContext;
+    private static final FhirContext FHIR_CONTEXT = FhirContext.forR4();
 
-    public BundleWriter() {
-        this.fhirContext = FhirContext.forR4();
-    }
-
-    public boolean writeBundleToJSON(Bundle bundle, String folder, String filename) {
+    public static boolean writeBundleToJSON(Bundle bundle, String folder, String filename, boolean readable) {
         if (bundle == null) return false;
 
         Path bundlePath = Path.of(folder);
@@ -29,12 +25,12 @@ public class BundleWriter {
 
         String resourceJSON = filename + ".json";
         bundlePath = bundlePath.resolve(resourceJSON);
-        return this.writeFHIRResourceFile(bundle, bundlePath);
+        return writeFHIRResourceFile(bundle, bundlePath, readable);
     }
 
-    private boolean writeFHIRResourceFile(Bundle bundle, Path path) {
+    private static boolean writeFHIRResourceFile(Bundle bundle, Path path, boolean readable) {
         try (FileOutputStream os = new FileOutputStream(path.toFile())) {
-            String bundleJSON = this.fhirContext.newJsonParser().setPrettyPrint(true).encodeResourceToString(bundle);
+            String bundleJSON = FHIR_CONTEXT.newJsonParser().setPrettyPrint(readable).encodeResourceToString(bundle);
             os.write(bundleJSON.getBytes(java.nio.charset.StandardCharsets.UTF_8));
             return true;
         } catch (IOException e) {

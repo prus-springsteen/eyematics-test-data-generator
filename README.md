@@ -1,6 +1,6 @@
 # EyeMatics Test Data Generator
 
-A simple tool to generate test data for the EyeMatics project. The tool is written in Java 17 and uses the HAPI FHIR 
+A simple tool to generate (fake) test data for the EyeMatics project. The tool is written in Java 17 and uses the HAPI FHIR 
 library (Version 5.1.0). 
 
 ## About
@@ -11,10 +11,10 @@ If you are interested in the DSF, please visit the [DSF website](https://dsf.dev
 line application that generates test data for the EyeMatics project, based on Builder classes for creating EyeMatics 
 FHIR resources.
 
-The Observation, Medication, MedicationAdministration and MedicationRequest Resources are generated according to the 
-[Eyematics Core Data Set](https://imi-ms.github.io/eyematics-kds/).  
+The Observation, DiagnosticReport, Medication, MedicationAdministration and MedicationRequest resources are generated according to the 
+[Eyematics Core Data Set](https://imi-ms.github.io/eyematics-kds/).  Furthermore, the MeasureReport resources are generated with an EyeMatics associated profile (https://eyematics.org/fhir/MeasureReport/ivi-patients-summary).
 
-The Consent Resource is generated according to the [MII IG Consent v2025](https://simplifier.net/guide/mii-ig-modul-consent-2025?version=2025.0.4) 
+The Consent resource is generated according to the [MII IG Consent v2025](https://simplifier.net/guide/mii-ig-modul-consent-2025?version=2025.0.4) 
 standard.
 
 ## Prerequisites

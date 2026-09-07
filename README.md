@@ -39,13 +39,13 @@ mvn clean package
 After the build completes, the `target/` directory will contain:
 
 ``` text
-eyematics-test-data-generator-<version>-SNAPSHOT.jar
+eyematics-test-data-generator-<version>.jar
 ```
 
 ## Running the Application
 
 ``` bash
-java -jar target/eyematics-test-data-generator-<version>-SNAPSHOT.jar
+java -jar target/eyematics-test-data-generator-<version>.jar
 ```
 
 The application will generate test data and print the steps to the console. The generated data can be found in the 
